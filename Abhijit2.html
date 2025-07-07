@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lead Management KPI Framework</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #0f172a;
+      color: white;
+    }
+    .container {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 1rem;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    video {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+    }
+    .like-comment {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .like-button {
+      background-color: #2563eb;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .comments {
+      margin-top: 2rem;
+    }
+    .comments h2 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    .comment-box {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+      border: none;
+    }
+    .submit-comment {
+      background-color: #10b981;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+    }
+    .comment-list {
+      margin-top: 1rem;
+    }
+    .comment {
+      background: rgba(255,255,255,0.05);
+      padding: 0.75rem;
+      border-radius: 6px;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lead Management KPI Framework</h1>
+    <video controls>
+      <source src="your-video-url.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="like-comment">
+      <button class="like-button" onclick="likeProject()">👍 Like</button>
+      <span id="like-count">0 Likes</span>
+    </div>
+
+    <div class="comments">
+      <h2>Leave a Comment</h2>
+      <textarea id="commentInput" class="comment-box" placeholder="Write your comment..."></textarea>
+      <button class="submit-comment" onclick="addComment()">Submit</button>
+      <div class="comment-list" id="commentList"></div>
+    </div>
+  </div>
+
+  <script>
+    let likeCount = 0;
+    function likeProject() {
+      likeCount++;
+      document.getElementById('like-count').textContent = `${likeCount} Likes`;
+    }
+
+    function addComment() {
+      const commentText = document.getElementById('commentInput').value;
+      if (!commentText) return;
+      const commentDiv = document.createElement('div');
+      commentDiv.className = 'comment';
+      commentDiv.textContent = commentText;
+      document.getElementById('commentList').appendChild(commentDiv);
+      document.getElementById('commentInput').value = '';
+    }
+  </script>
+</body>
+</html>
