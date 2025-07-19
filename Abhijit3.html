@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lead Management KPI Framework</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #0f172a;
+      color: white;
+    }
+    .container {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 1rem;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    video {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+    }
+    .like-comment {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .like-button {
+      background-color: #2563eb;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .comments {
+      margin-top: 2rem;
+    }
+    .comments h2 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    .comment-box {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+      border: none;
+    }
+    .submit-comment {
+      background-color: #10b981;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+    }
+    .comment-list {
+      margin-top: 1rem;
+    }
+    .comment {
+      background: rgba(255,255,255,0.05);
+      padding: 0.75rem;
+      border-radius: 6px;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Automated Lead Management Engine</h1>
+    <video autoplay muted loop playsinline>
+      <source src="test_2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+        <!-- 📌 Project Summary Section -->
+<div class="project-summary" style="margin-bottom: 2rem;">
+  <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">Project Summary</h2>
+  <p style="line-height: 1.6; margin-bottom: 1rem;">
+    Delivered a next-generation, data-driven lead management and opportunity intelligence framework tailored for high-velocity automotive sales environments. The solution was built to replace reactive, siloed CRM workflows with a proactive, real-time system focused on optimizing conversion efficiency, accountability, and responsiveness.
+  </p>
+  <p style="line-height: 1.6; margin-bottom: 1rem;">
+    The framework was implemented through an immersive Power BI experience, featuring custom HTML-animated visuals and integrated automation. It unified CRM, marketing, and sales data streams to create a single source of intelligence for lead tracking, prioritization, and escalation.
+  </p>
+
+  <h3 style="font-size: 1.2rem; margin-top: 1.5rem; margin-bottom: 0.5rem;">🔧 Core Capabilities</h3>
+  <ul style="line-height: 1.6; padding-left: 1.2rem; margin-bottom: 1rem;">
+    <li>🕒 <strong>Stage-Level Time-to-Action (TAT) Analytics:</strong> Calculated time spent per funnel stage (Created → Experiencing → Deciding → Converted) with SLA benchmarking and delay detection.</li>
+    <li>📊 <strong>Dynamic Lead Scoring & Tiering:</strong> Real-time scoring model based on channel conversion history, volume contribution, stage proximity, and behavioral signals; output tiers: Hot, Warm, Cold.</li>
+    <li>⚖️ <strong>Load Factor & KPI Relaxation:</strong> Load-aware performance adjustments using sigmoid decay logic, ensuring fair SLA targets during high sales volume periods.</li>
+    <li>⏳ <strong>90th Percentile Expiry Modeling:</strong> Classified leads as "Active" or "Expired" based on empirical thresholds per stage, improving forecast accuracy and pipeline cleanliness.</li>
+    <li>⚙️ <strong>Real-Time Alerts & Automation:</strong> Power Automate-driven escalations triggered by SLA breaches, inactivity, or Tier 1 lead stagnation—automatically sent to mapped stakeholders.</li>
+  </ul>
+
+  <h3 style="font-size: 1.2rem; margin-top: 1.5rem; margin-bottom: 0.5rem;">📈 Dashboard & Visualization Highlights</h3>
+  <ul style="line-height: 1.6; padding-left: 1.2rem; margin-bottom: 1rem;">
+    <li>🎨 <strong>Custom HTML & DAX Animations:</strong> Interactive bubble charts, stage dials, tachometers, and funnel movement visuals for intuitive, story-based insights.</li>
+    <li>🔄 <strong>Automated Data Refresh:</strong> Seamless ETL pipeline with daily ingestion from CRM, finance, and marketing platforms—supporting near real-time dashboards.</li>
+    <li>🎯 <strong>KPI-Centric Architecture:</strong> Dashboards structured around key business metrics such as lead TAT, delay rate, conversion velocity, and ROI by source/channel.</li>
+    <li>🧠 <strong>AI-Style Narrative Insights:</strong> Embedded logic to generate human-like summaries that interpret movements, identify anomalies, and suggest corrective actions.</li>
+    <li>👥 <strong>Multi-Level Views:</strong> Executive summary views with drilldowns by dealer, channel, nameplate, market, and sales stage—ensuring cross-functional clarity.</li>
+  </ul>
+
+  <h3 style="font-size: 1.2rem; margin-top: 1.5rem; margin-bottom: 0.5rem;">🚀 Strategic Outcome</h3>
+  <p style="line-height: 1.6;">
+    The result was a robust, enterprise-grade operating system for sales performance—enabling C-suite visibility, faster decision-making, cleaner forecasting, and improved pipeline accountability across regional sales networks. It transitioned the sales process from passive tracking to precision opportunity execution.
+  </p>
+</div>
+
+<div class="like-comment">
+  <button class="like-button" onclick="likeProject()">👍 Like</button>
+  <span id="like-count">0 Likes</span>
+</div>
+
+<div class="comments">
+  <h2>Leave a Comment</h2>
+  <textarea id="commentInput" class="comment-box" placeholder="Write your comment..."></textarea>
+  <button class="submit-comment" onclick="addComment()">Submit</button>
+  <div class="comment-list" id="commentList"></div>
+</div>
+
+
+  <script>
+    let likeCount = 0;
+    function likeProject() {
+      likeCount++;
+      document.getElementById('like-count').textContent = `${likeCount} Likes`;
+    }
+
+    function addComment() {
+      const commentText = document.getElementById('commentInput').value;
+      if (!commentText) return;
+      const commentDiv = document.createElement('div');
+      commentDiv.className = 'comment';
+      commentDiv.textContent = commentText;
+      document.getElementById('commentList').appendChild(commentDiv);
+      document.getElementById('commentInput').value = '';
+    }
+  </script>
+</body>
+</html>
